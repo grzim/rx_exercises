@@ -5,7 +5,6 @@ function duplicate(n) {
   return [n, n];
 }
 
-
 function* flatMapExampleGenerator(){
   yield _.map([1, 2], duplicate);
   yield _.flatMap([1, 2], duplicate);

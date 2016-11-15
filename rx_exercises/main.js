@@ -1,2 +1,3 @@
 import 'babel-polyfill';
-import './schedulers/asap';
+// import './schedulers/asap';
+import './async-collection';

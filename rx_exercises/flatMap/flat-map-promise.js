@@ -11,7 +11,7 @@ function getWordPromise(){
       response =>
         // Examine the text in the response
         response.json().then(wordArr => wordArr[0].word)
-          .catch(err => console.log('Response Error', err))
+        .catch(err => console.log('Response Error', err))
     )
     .catch(err => {
       console.log('Fetch Error', err);
@@ -27,4 +27,3 @@ Rx.Observable
     error => console.error(error),
     () => console.log('done')
   );
-

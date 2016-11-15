@@ -12,4 +12,3 @@ Rx.Observable.of(10)
 console.log('After queue subscription');
 
 setTimeout(()=>console.log("bye"),0);
-

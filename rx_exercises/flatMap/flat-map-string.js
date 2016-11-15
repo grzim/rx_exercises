@@ -12,5 +12,3 @@ flatMapString$.subscribe(
   (err) => console.log('Error: ' + err),
   () => console.log('Completed')
 );
-
-

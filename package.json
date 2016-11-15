@@ -1,9 +1,11 @@
 {
   "main": "main.js",
   "scripts": {
-    "watch": "webpack-dev-server -d"
+    "watch": "webpack-dev-server -d",
+    "test": "ava"
   },
   "devDependencies": {
+    "ava": "^0.16.0",
     "babel": "^6.5.2",
     "babel-core": "^6.17.0",
     "babel-loader": "^6.2.5",
@@ -22,8 +24,10 @@
     "exports-loader": "^0.6.3",
     "file-loader": "^0.8.5",
     "imports-loader": "^0.6.5",
+    "jsdom": "^9.8.3",
     "json-loader": "^0.5.4",
     "junit-viewer": "^4.9.6",
+    "lazy-ass": "^1.5.0",
     "minimist": "^1.2.0",
     "on-build-webpack": "^0.1.0",
     "request-promise": "^2.0.1",
@@ -37,6 +41,7 @@
   "dependencies": {
     "babel-plugin-transform-regenerator": "^6.16.1",
     "lodash": "^4.16.4",
+    "rx": "^4.1.0",
     "rxjs": "^5.0.0-rc.1"
   }
 }
