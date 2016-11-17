@@ -32,11 +32,11 @@ const makeAsyncStream$ = source => Rx.Observable
 
 const asyncStream$ = makeAsyncStream$(story());
 
-const asyncSubscription = asyncStream$.subscribe(
-  x => console.log(x),
-  error => console.error(error),
-  () => console.log('done')
-)
+// const asyncSubscription = asyncStream$.subscribe(
+//   x => console.log(x),
+//   error => console.error(error),
+//   () => console.log('done')
+// )
 
 // export const syncStream$ = Rx.Observable
 //   .from(story())

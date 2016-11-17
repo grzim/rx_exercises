@@ -1,18 +1,17 @@
-const test = require('ava')
-const asyncCollection = require('./async-collection');
-const {
-  makeAsyncStream$
-} = asyncCollection;
+import Rx from 'rxjs/Rx';
+import test from 'ava';
+
+import { makeAsyncStream$ } from './async-collection';
 
 const noop = () => {};
 
 function getWordPromise() {
   return new Promise(resolve => {
     setTimeout(() => resolve(true), 500)
-  })
-}
+  });
+};
 
-function *storyInput(){
+function *storyInput() {
   yield getWordPromise();
   yield 'next word:';
   yield getWordPromise();
@@ -20,20 +19,22 @@ function *storyInput(){
   yield [[1,2,3,4],2,[1,2,3,4],4];
 }
 
-function *storyOutput(){
-  yield true;
+function *storyOutput() {
   yield 'next word:';
-  yield true;
   yield [1,2,3,4];
   yield [[1,2,3,4],2,[1,2,3,4],4];
+  yield true;
+  yield true;
 }
 
 const asyncStream$ = makeAsyncStream$(storyInput());
 
 test('asyncStream$ stream is properly created', (t) => {
+  t.plan(5);
+
   const output = storyOutput();
 
-  asyncStream$.subscribe(val => {
-    t.is(val, 'output.next().value')
-  })
+  return asyncStream$.map(x => {
+    t.deepEqual(x, output.next().value);
+  });
 })
